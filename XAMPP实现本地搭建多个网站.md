@@ -51,11 +51,11 @@
 
  3. **在 apache 中添加多域名支持**
   
- - **失效httpd.conf**
+    - **失效httpd.conf**
  
     打开xampp\apache\conf\httpd.conf文件，搜索 " Include conf/extra/httpd-vhosts.conf "，确保前面没有 # 注释符，也就确保引入了 vhosts 虚拟主机配置文件。 **开启了httpd-vhosts.conf，默认的httpd.conf默认配置就失效**
 
- - **修改https-vhosts.conf**
+    - **修改https-vhosts.conf**
     
     使用文件编辑器打开文件:xampp/apache/conf/extra/httpd-vhosts.conf 。
     首先找到 NameVirtualHost *:80 ；去掉前面的注释符号 #。如果没有这一行，就自己添加一行。
