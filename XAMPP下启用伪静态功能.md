@@ -1,7 +1,9 @@
 ## XAMPP下启用伪静态功能 ##
 
  - 第一步，创建伪静态规则文件.htaccess,并放置于需要伪静态程序的安装根目录，如..\htdocs\typecho\;
+ 
  - 第二步，修改..\xampp\apache\conf\httpd.conf ,首先找到“LoadModule rewrite_module modules/mod_rewrite.so” 将其前面的#号去掉；
+ 
  - 第三步：还是修改..\xampp\apache\conf\httpd.conf ,找到：
 
     ```
@@ -17,4 +19,5 @@
     ```
  
  PS1:第一步和第三步中的typecho及其路径需依据自己实际做对应修改。
+ 
  PS2:.htaccess文件的内容请根据使用web程序的rewrite规则做修改。
