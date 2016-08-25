@@ -15,6 +15,6 @@
     Options FollowSymLinks 
     AllowOverride All
     ```
+ 
  PS1:第一步和第三步中的typecho及其路径需依据自己实际做对应修改。
-
  PS2:.htaccess文件的内容请根据使用web程序的rewrite规则做修改。
