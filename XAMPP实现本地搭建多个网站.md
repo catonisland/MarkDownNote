@@ -33,8 +33,11 @@
     
         在本例子中，我们应该这样修改,讲以下内容添加至文件最后面
 
-        <pre><code>127.0.0.1 t.com typecho</p>127.0.0.1 cf.com Carbon Forum'</code></pre>
-
+        ```
+        127.0.0.1 t.com typecho
+        127.0.0.1 cf.com Carbon Forum
+        ```
+        
  2. **在 htdocs 目录下建立文件夹**
  
     - 我们在 xampp/htdocs 目录下建立两个文件夹，分别命名为 a 和 b 。
@@ -42,17 +45,23 @@
 
     - 在a、b目录下加入一个 index.html 文件，内容如下：
 
-        <pre><code><html><H1>t.com已经可以访问了</H1></html></code></pre>
+        ```
+        <html>t.com已经可以访问了</html>
+        ```
 
  3. **在 apache 中添加多域名支持**
+  
  - **失效httpd.conf**
- 打开xampp\apache\conf\httpd.conf文件，搜索 " Include conf/extra/httpd-vhosts.conf "，确保前面没有 # 注释符，也就确保引入了 vhosts 虚拟主机配置文件。
- **开启了httpd-vhosts.conf，默认的httpd.conf默认配置就失效**
- - **修改https-vhosts.conf**
-使用文件编辑器打开文件:xampp/apache/conf/extra/httpd-vhosts.conf 。
-首先找到 NameVirtualHost *:80 ；去掉前面的注释符号 # 。如果没有这一行，就自己添加一行。
-同时添加以下代码：
+ 
+    打开xampp\apache\conf\httpd.conf文件，搜索 " Include conf/extra/httpd-vhosts.conf "，确保前面没有 # 注释符，也就确保引入了 vhosts 虚拟主机配置文件。 **开启了httpd-vhosts.conf，默认的httpd.conf默认配置就失效**
 
+ - **修改https-vhosts.conf**
+    
+    使用文件编辑器打开文件:xampp/apache/conf/extra/httpd-vhosts.conf 。
+    首先找到 NameVirtualHost *:80 ；去掉前面的注释符号 #。如果没有这一行，就自己添加一行。
+    同时添加以下代码：
+
+    ```
     <VirtualHost *:80>
         ServerAdmin postmaster@t.com
         DocumentRoot "/xampp/htdocs/a"
@@ -68,14 +77,17 @@
         ErrorLog "logs/cf.com-error.log"
         CustomLog "logs/cf.com-access.log" common
     </VirtualHost>
+    ```
 
-这样，访问本机IP 127.0.0.1 或者说 localhost 的请求将全部指向 vhosts.conf 中的第一个虚拟主机，即/a目录
-而通过域名cf.com访问的请求将指向/b目录
-如需默认访问路径改为/,则照葫芦画瓢即可。
+    这样，访问本机IP 127.0.0.1 或者说 localhost 的请求将全部指向 vhosts.conf 中的第一个虚拟主机，即/a目录
+    而通过域名cf.com访问的请求将指向/b目录
+    如需默认访问路径改为/,则照葫芦画瓢即可。
 
 4. **重启 Apache 并验证多域名**
-完成之后，重新启动 apache 服务，重新打开浏览器。
-并在浏览器中分别输入 http://t.com 和 http://cf.com ，可以分别看到我们前面输入的不同文字，则代表已经成功了。
 
-> 如有问题，欢迎留言一起交流~
+    完成之后，重新启动 apache 服务，重新打开浏览器。
+    在浏览器中分别输入 http://t.com 和 http://cf.com，可以分别看到我们前面输入的不同文字，则代表已经成功了。
+
+
+>如有问题，欢迎留言一起交流~
 
