@@ -1,8 +1,6 @@
----
-title: XAMPP实现本地搭建多个网站 
-tags: XAMPP,本地环境,多站点
-grammar_cjkRuby: true
----
+
+## XAMPP实现本地搭建多个网站.md ##
+
 
 > xampp 是一个非常方便的本地 apache + php + mysql 的调试环境，在本地安装测试 WordPress 等各种博客、论坛程序非常方便。
 今天我们来给大家介绍一下，**如何使用XAMPP在本地进行安装多个网站。**
