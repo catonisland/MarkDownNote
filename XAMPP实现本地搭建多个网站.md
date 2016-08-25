@@ -33,7 +33,7 @@
     
         在本例子中，我们应该这样修改,讲以下内容添加至文件最后面
 
-        127.0.0.1 t.com typecho<br>127.0.0.1 cf.com Carbon Forum
+        <pre><code>127.0.0.1 t.com typecho</p>127.0.0.1 cf.com Carbon Forum'</code></pre>
 
  2. **在 htdocs 目录下建立文件夹**
  
@@ -42,7 +42,7 @@
 
     - 在a、b目录下加入一个 index.html 文件，内容如下：
 
-    '<html><H1>t.com已经可以访问了</H1></html>'
+        '<html><H1>t.com已经可以访问了</H1></html>'
 
  3. **在 apache 中添加多域名支持**
  - **失效httpd.conf**
