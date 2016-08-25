@@ -4,12 +4,17 @@
  - 第二步，修改..\xampp\apache\conf\httpd.conf ,首先找到“LoadModule rewrite_module modules/mod_rewrite.so” 将其前面的#号去掉；
  - 第三步：还是修改..\xampp\apache\conf\httpd.conf ,找到：
 
-    > AllowOverride none <br>Require all denied
-
+    ```
+    AllowOverride none 
+    Require all denied
+    ```
+    
     将其改为：
 
-    > Options FollowSymLinks <br>AllowOverride All
+    ```
+    Options FollowSymLinks 
+    AllowOverride All
+    ```
+ PS1:第一步和第三步中的typecho及其路径需依据自己实际做对应修改。
 
- - ps:第一步和第三步中的typecho及其路径需依据自己实际做对应修改。
-
- - pss:.htaccess文件的内容请根据使用web程序的rewrite规则做修改。
+ PS2:.htaccess文件的内容请根据使用web程序的rewrite规则做修改。
