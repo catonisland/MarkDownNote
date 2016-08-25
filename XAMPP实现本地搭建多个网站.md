@@ -21,7 +21,6 @@
 
 ## 实现方式 ##
  1. **在 hosts 文件中设置域名解析**
-
 和正常的域名一样，这两个域名并不存在，我们也需要进行解析，而因为我们搭建在本地且仅本地访问，我们可以通过修改本地 hosts 文件来解决这个问题。关于解析的具体介绍参考本站其他文章。
 
  - **找到文件位置**
@@ -37,12 +36,11 @@ Hosts 文件保存在 C:\Windows\System32\drivers\etc下，无扩展名，使用
  - 我们在 xampp/htdocs 目录下建立两个文件夹，分别命名为 a 和 b 。
 这里文件目录的名字仅仅是为了便于区分，并非强制要求；只要目录名和后面的设置一致即可。
 
-- 在a目录下加入一个 index.html 文件，内容如下：
-    <html><H1>t.com已经可以访问了</H1></html>
-    b目录同理，之后用来检验能否正常访问。
-    
- 3. **在 apache 中添加多域名支持**
+- 在a、b目录下加入一个 index.html 文件，内容如下：
 
+    <html><H1>t.com已经可以访问了</H1></html>
+
+ 3. **在 apache 中添加多域名支持**
  - **失效httpd.conf**
  打开xampp\apache\conf\httpd.conf文件，搜索 " Include conf/extra/httpd-vhosts.conf "，确保前面没有 # 注释符，也就确保引入了 vhosts 虚拟主机配置文件。
  **开启了httpd-vhosts.conf，默认的httpd.conf默认配置就失效**
@@ -66,7 +64,7 @@ Hosts 文件保存在 C:\Windows\System32\drivers\etc下，无扩展名，使用
         ErrorLog "logs/cf.com-error.log"
         CustomLog "logs/cf.com-access.log" common
     </VirtualHost>
-    
+
 这样，访问本机IP 127.0.0.1 或者说 localhost 的请求将全部指向 vhosts.conf 中的第一个虚拟主机，即/a目录
 而通过域名cf.com访问的请求将指向/b目录
 如需默认访问路径改为/,则照葫芦画瓢即可。
@@ -77,5 +75,3 @@ Hosts 文件保存在 C:\Windows\System32\drivers\etc下，无扩展名，使用
 
 > 如有问题，欢迎留言一起交流~
 
-
-    
