@@ -17,11 +17,17 @@
    
    - 对于本次，仅需要Nginx
 
+   - LNMP的源也可自己改，建议从[军哥网站][3]获取最新版本 
+
     ```
-    wget http://down.zhujiwiki.com/lnmp.tar.gz
-    tar xzf lnmp.tar.gz
-    cd lnmp
-    ./install.sh
+    wget http://down.zhujiwiki.com/lnmp.tar.gz && tar xzf lnmp.tar.gz && cd lnmp && ./install.sh
+    ```
+    
+    或
+    
+    ```
+    screen -S lnmp
+    wget -c http://soft.vpser.net/lnmp/lnmp1.3-full.tar.gz && tar zxf lnmp1.3-full.tar.gz && cd lnmp1.3-full && ./install.sh lnmp
     ```
     
 3. **创建站点**
@@ -40,7 +46,7 @@
 
     - 使用免费的Let's encrypt 证书。
     - 建议使用独立的文件夹存放SSL证书，如/root/ssl/
-    - 详细步骤参考：[快速获取/更新 Let's encrypt 证书][3]
+    - 详细步骤参考：[快速获取/更新 Let's encrypt 证书][4]
 
 5. **使用Nginx反代google**
 
@@ -115,4 +121,5 @@
 
   [1]: http://xiazai.xshellcn.com/wm/Xshell_setup_wm.exe
   [2]: http://www.cnblogs.com/perseverancevictory/p/4910145.html
-  [3]: http://zhujiwiki.com/9127.html
+  [3]: http://lnmp.org/install.html
+  [4]: http://zhujiwiki.com/9127.html
