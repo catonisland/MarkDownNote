@@ -46,7 +46,7 @@
     - 在a、b目录下加入一个 index.html 文件，内容如下：
 
         ```
-        <html>t.com已经可以访问了</html>
+        <html><H1>t.com已经可以访问了</H1></html>
         ```
 
  3. **在 apache 中添加多域名支持**
